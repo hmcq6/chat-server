@@ -13,5 +13,8 @@
     "express": "^4.16.3",
     "express-ws": "^4.0.0",
     "ioredis": "^3.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1"
   }
 }

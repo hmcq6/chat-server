@@ -10,8 +10,8 @@ const indexRoute = (ws, { params: { channel, user } }) => {
   redisSubscriber.addListener(
     'message',
     `${ channel }:messages`,
-    function(redisChannel, message) {
-      const [ _, ...channelParts ] = redisChannel.split(':');
+    function(redisChannel, _message) {
+      const [ _keyspace, ...channelParts ] = redisChannel.split(':');
 
       redisClient.notifyClient(ws, channelParts.join(':'))
     }
