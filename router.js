@@ -1,13 +1,15 @@
 const express = require('express'),
   index = require('./routes/index'),
-  version = require('./routes/version'),
-  Router = () => {
-    const router = express.Router();
+  version = require('./routes/version');
 
-    router.ws('/:channel/:user', index);
-    router.ws('/version', version);
+const Router = () => {
+  /* eslint new-cap: "off" */
+  const router = express.Router();
 
-    return router;
-  };
+  router.ws('/:channel/:user', index);
+  router.ws('/version', version);
+
+  return router;
+};
 
 module.exports = Router;
